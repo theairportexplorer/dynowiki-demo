@@ -73,7 +73,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                "sekizai.context_processors.sekizai",
+                "sekizai.context_processors.sekizai", # Wiki needed
             ],
         },
     },
@@ -81,6 +81,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'dynowiki.wsgi.application'
 
+### Wiki config
+SITE_ID = 1
+
+WIKI_ACCOUNT_HANDLING = True
+WIKI_ACCOUNT_SIGNUP_ALLOWED = True
+
+from django.core.urlresolvers import reverse_lazy
+LOGIN_REDIRECT_URL = reverse_lazy('wiki:get', kwargs={'path': ''})
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
