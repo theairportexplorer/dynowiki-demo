@@ -3,7 +3,7 @@ Production Settings for Heroku
 """
 
 import environ
-from dynowiki.settings.dev import *
+from dynowiki.settings.local import *
 
 env = environ.Env(
     # set casting, default value
