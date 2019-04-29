@@ -2,3 +2,8 @@
 .vscode/
 __pycache__
 db.sqlite3
+static/admin/
+static/mptt/
+static/wiki/
+static/staticfiles.json
+media/
