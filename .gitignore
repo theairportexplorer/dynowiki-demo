@@ -2,8 +2,8 @@
 .vscode/
 __pycache__
 db.sqlite3
-static/admin/
-static/mptt/
-static/wiki/
-static/staticfiles.json
+dynowiki/static/admin/
+dynowiki/static/mptt/
+dynowiki/static/wiki/
+dynowiki/static/staticfiles.json
 media/
