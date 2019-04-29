@@ -1,1 +1,1 @@
-web: gunicorn djangowiki.wsgi --preload --log-file -
+web: gunicorn dynowiki.wsgi --preload --log-file -
