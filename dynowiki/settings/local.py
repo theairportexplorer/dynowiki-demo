@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'wiki.plugins.images.apps.ImagesConfig',                #
     'wiki.plugins.macros.apps.MacrosConfig',                # End Wiki Apps
     'dynowiki',
+    'wikistuff',
 ]
 
 MIDDLEWARE = [
@@ -142,6 +143,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+# Only use these for local development; Heroku is ephemeral and thus all media
+# not checked into source (user uploaded or generated) will be lost on the next 
+# dyno reboot, ie daily + with every deployment or config var change
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
