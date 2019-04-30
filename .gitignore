@@ -7,4 +7,4 @@ dynowiki/static/mptt/
 dynowiki/static/wiki/
 dynowiki/static/staticfiles.json
 media/
-static/
+dynowiki/static/
