@@ -1,10 +1,21 @@
 {% extends "wiki/base_site.html" %}
 {% load sekizai_tags %}
 
+{% block wiki_site_title %} - DynoWiki {% endblock %}
+
 {% block wiki_header_branding %}
     {% addtoblock "css" %}
     <link href="/static/dynowiki/css/custom.css" rel="stylesheet" type="text/css" />
     {% endaddtoblock %}
     <img src="/static/dynowiki/img/heroku-logo-solid-white-transparent.png" alt="Heroku" height="60" width="60">
 
+{% endblock %}
+
+{% block wiki_header_navlinks %}
+    {% addtoblock "css" %}
+        <link href="/static/dynowiki/css/custom.css" rel="stylesheet" type="text/css" />
+    {% endaddtoblock %}
+    <ul class="nav navbar-nav">
+        <li class="active"><a href="{% url 'wiki:root' %}" style="background-color: transparent">Home</a></li>
+    </ul>
 {% endblock %}
