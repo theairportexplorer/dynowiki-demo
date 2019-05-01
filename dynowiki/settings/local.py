@@ -48,8 +48,7 @@ INSTALLED_APPS = [
     'wiki.plugins.notifications.apps.NotificationsConfig',  #
     'wiki.plugins.images.apps.ImagesConfig',                #
     'wiki.plugins.macros.apps.MacrosConfig',                #
-    'wiki.conf.settings.STORAGE_BACKEND',                   #
-    'wiki.plugins.images.settings.IMAGE_PATH',              # End Wiki Apps
+    'wiki.conf',                                            # End Wiki Apps
     'dynowiki',
     'wikistuff',
 ]

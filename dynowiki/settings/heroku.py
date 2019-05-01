@@ -31,6 +31,8 @@ DATABASES = {
 # set up an account with Amazon or have added the Bucketeer addon.
 # Example taken from https://stackoverflow.com/questions/19915116/setting-django-to-serve-media-files-from-amazon-s3
 # with credit for being a very concise S3 tutorial
+from wiki.conf.settings import STORAGE_BACKEND as MEDIA_BACKEND
+from wiki.plugins.images.settings import IMAGE_PATH
 INSTALLED_APPS += ('storages',)
 
 AWS_STORAGE_BUCKET_NAME = env('BUCKETEER_BUCKET_NAME')
@@ -38,7 +40,7 @@ AWS_STORAGE_BUCKET_NAME = env('BUCKETEER_BUCKET_NAME')
 S3_URL = f"http://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/public/"
 MEDIA_URL = f"{S3_URL}{MEDIA_ROOT}/"
 DEFAULT_FILE_STORAGE = 'dynowiki.s3utils.MediaRootS3BotoStorage'
-wiki.conf.settings.STORAGE_BACKEND='dynowiki.s3utils.MediaRootS3BotoStorage'
-wiki.plugins.images.settings.IMAGE_PATH = f"{MEDIA_URL}/wiki/images"
+MEDIA_BACKEND ='dynowiki.s3utils.MediaRootS3BotoStorage'
+IMAGE_PATH = f"{MEDIA_URL}/wiki/images"
 AWS_ACCESS_KEY_ID = env('BUCKETEER_AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = env('BUCKETEER_AWS_SECRET_ACCESS_KEY')
