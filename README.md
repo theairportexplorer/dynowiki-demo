@@ -10,6 +10,12 @@ With that in mind, here are the specific changes needed to get a locally running
 
 >Note: To clone and run this project locally from scratch, check out the related guide [LOCALSETUP.md](LOCALSETUP.md)
 
+## Prerequisites to Success
+
+[ ] Signup for [Heroku](https://signup.heroku.com/)
+[ ] Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
+[ ] Clone this Repo
+
 ## Step 1: Create a .gitignore
 
 This will enable you to smoothly run your application locally and in production with minimal headache.
