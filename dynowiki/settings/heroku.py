@@ -33,9 +33,10 @@ DATABASES = {
 # with credit for being a very concise S3 tutorial
 INSTALLED_APPS += ('storages',)
 
-AWS_STORAGE_BUCKET_NAME = env('BUCKETEER_BUCKET_NAME')                          
+AWS_STORAGE_BUCKET_NAME = env('BUCKETEER_BUCKET_NAME')
+# Bucketeer requires media files to be in public to be generally accessible
 S3_URL = f"http://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/public/"
 MEDIA_URL = f"{S3_URL}{MEDIA_ROOT}/"
-DEFAULT_FILE_STORAGE = 'dynowiki.s3utils.MediaRootS3BotoStorage'                      
-AWS_ACCESS_KEY_ID = env('BUCKETEER_AWS_ACCESS_KEY_ID')                             
-AWS_SECRET_ACCESS_KEY = env('BUCKETEER_AWS_SECRET_ACCESS_KEY')  
+DEFAULT_FILE_STORAGE = 'dynowiki.s3utils.MediaRootS3BotoStorage'
+AWS_ACCESS_KEY_ID = env('BUCKETEER_AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = env('BUCKETEER_AWS_SECRET_ACCESS_KEY')
