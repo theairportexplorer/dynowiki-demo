@@ -34,7 +34,7 @@ DATABASES = {
 INSTALLED_APPS += ('storages',)
 
 AWS_STORAGE_BUCKET_NAME = env('BUCKETEER_BUCKET_NAME')                          
-S3_URL = f"http://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/"
+S3_URL = f"http://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/public/"
 MEDIA_URL = S3_URL + MEDIA_ROOT                                                 
 DEFAULT_FILE_STORAGE = 'dynowiki.s3utils.MediaRootS3BotoStorage'                      
 AWS_ACCESS_KEY_ID = env('BUCKETEER_AWS_ACCESS_KEY_ID')                             
