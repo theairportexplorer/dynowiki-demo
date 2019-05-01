@@ -6,10 +6,9 @@ Originally created for PyCon 2019 Heroku Workshop, this project demonstrates the
 
 This project utilizes [Django-Wiki](https://github.com/django-wiki/django-wiki), but this project ideally models what any locally built and working project can update to become productionized.
 
-With that in mind, here are the specific changes needed to get a locally running app with minimal adjustments from the original `startapp` configuration deployed!
+With that in mind, here are the specific changes needed to get a locally running app with minimal adjustments from the original `startproject` configuration deployed!
 
->Note: To clone and run this project locally from scratch, check out the related
-guide [LOCALSETUP.md](LOCALSETUP.md)
+>Note: To clone and run this project locally from scratch, check out the related guide [LOCALSETUP.md](LOCALSETUP.md)
 
 ## Step 1: Create a .gitignore
 
@@ -17,6 +16,7 @@ This will enable you to smoothly run your application locally and in production 
 
 In addition to whatever you'd normally place in your .gitignore, be sure to
 [untrack](https://git-scm.com/docs/git-rm#Documentation/git-rm.txt---cached) the following files:
+
 ```
 /your-venv-directory
 __pycache__

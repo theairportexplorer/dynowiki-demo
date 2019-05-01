@@ -6,13 +6,30 @@ After cloning this repo, here are the steps (not covered in the workshop) to get
 
 [ ] `git clone repo`
 [ ] [Python 3.7 installed locally](https://www.python.org/downloads/)
+
+## Environment setup
 [ ] `python3 -m venv djangowiki` to create an [environment](https://docs.python.org/3/library/venv.html)
 [ ] `source djangowiki/bin/activate` (on Mac)
-[ ] `pip install -f requirements.txt`
+[ ] `pip install -r requirements.txt`
+[ ] `cd` to the directory where `manage.py` lives
 [ ] Drink some water and stretch out
 
-## 1
+## 3
+Run the following command:
 
-`cd` to the directory where `manage.py` lives and run the following command:
 `python3 manage.py migrate`
+
+## 4
+Next, create a superuser:
+
+`python3 manage.py createsuperuser`
+
+## 5
+Locally, you can use either the provided `runserver` or `gunicorn` for dev-prod parity. Either command works:
+
+`python3 manage.py runserver`
+
+-OR-
+
+`gunicorn dynowiki.wsgi`
 
