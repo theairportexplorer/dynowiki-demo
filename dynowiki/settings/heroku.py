@@ -25,3 +25,17 @@ DATABASES = {
     # read os.environ['DATABASE_URL'] and raises ImproperlyConfigured exception if not found
     'default': env.db(),
 }
+
+# S3 EXAMPLE
+# This config is for S3 storage - only enable for media, and only use if you've
+# set up an account with Amazon or have added the Bucketeer addon.
+# Example taken from https://stackoverflow.com/questions/19915116/setting-django-to-serve-media-files-from-amazon-s3,
+# with credit for being a very concise S3 tutorial
+INSTALLED_APPS += ('storages',)
+
+AWS_STORAGE_BUCKET_NAME = env('BUCKETEER_BUCKET_NAME')                          
+S3_URL = f"http://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/"
+MEDIA_URL = S3_URL + MEDIA_ROOT                                                 
+DEFAULT_FILE_STORAGE = 'dynowiki.s3utils.MediaRootS3BotoStorage'                      
+AWS_ACCESS_KEY_ID = env('BUCKETEER_AWS_ACCESS_KEY_ID')                             
+AWS_SECRET_ACCESS_KEY = env('BUCKETEER_AWS_SECRET_ACCESS_KEY')  
