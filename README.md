@@ -223,6 +223,14 @@ heroku open
 
 Tada!! It's a dynowiki!
 
+## Logs
+
+To see your website's activity, you can run the following command:
+
+```
+heroku logs --tail
+```
+
 ## Some Optional Commandline Things
 
 Because of COURSE we want to play with it right?
