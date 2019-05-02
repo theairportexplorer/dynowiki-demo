@@ -1,2 +1,7 @@
+/venv
 /djangowiki
 .vscode/
+__pycache__
+db.sqlite3
+media/
+/wikistuff/static
