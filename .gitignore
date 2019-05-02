@@ -2,9 +2,5 @@
 .vscode/
 __pycache__
 db.sqlite3
-dynowiki/static/admin/
-dynowiki/static/mptt/
-dynowiki/static/wiki/
-dynowiki/static/staticfiles.json
 media/
 dynowiki/static/

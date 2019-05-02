@@ -47,8 +47,7 @@ INSTALLED_APPS = [
     'wiki.plugins.attachments.apps.AttachmentsConfig',      #
     'wiki.plugins.notifications.apps.NotificationsConfig',  #
     'wiki.plugins.images.apps.ImagesConfig',                #
-    'wiki.plugins.macros.apps.MacrosConfig',                #
-    'wiki.conf',                                            # End Wiki Apps
+    'wiki.plugins.macros.apps.MacrosConfig',                # End Wiki Apps
     'dynowiki',
     'wikistuff',
 ]
