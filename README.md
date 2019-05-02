@@ -169,7 +169,7 @@ You have an app!
 
 This app will receive your codebase as a slug. It's where all the environment variables get set, all the connections are specified. Once we've pushed your code to your app, you'll be able to scale up dynos - which run those separate processes from above!
 
-Before moving on, go ahead and grab the name of your site - it'll be something like `serene-caverns-99999.com`. 
+Before moving on, go ahead and grab the name of your site - it'll be something like `serene-caverns-99999.herokuapp.com`. 
 
 ## Heroku Config
 
@@ -178,18 +178,18 @@ Before we push the code up, let's set the config vars (or we'll see errors!)
 You can remind yourself what environment variables we need by looking at your `heroku.py` file, but to get this project ready to run, you can use the CLI `heroku config` command.
 
 ```
-heroku config ALLOWED_HOSTS=your-app-name.com
-heroku config DJANGO_SETTINGS_MODULE=dynowiki.settings.heroku
+heroku config:set ALLOWED_HOSTS=your-app-name.com
+heroku config:set DJANGO_SETTINGS_MODULE=dynowiki.settings.heroku
 ```
 For the SECRET_KEY, you'll need to generate a new secret. For this demo, it doesn't matter what it is - it's great to use a secure hash generator, or a password manager's generator. Just be sure to keep this value secure, don't reuse it, and NEVER check it into source code!
 
 ```
-heroku config SECRET_KEY=YOURSECUREGENERATEDPASSWORD
+heroku config:set SECRET_KEY=YOURSECUREGENERATEDPASSWORD
 ```
 Lastly, Heroku will automatically detect the number of concurrent processes you want to run on each dyno. Depending on the resource usage of your process, this can make each dyno handle more requests more quickly - but for now, let's stick to one process.
 
 ```
-heroku config WEB_CONCURRENCY=1
+heroku config:set WEB_CONCURRENCY=1
 ```
 
 ## Heroku Deploy
